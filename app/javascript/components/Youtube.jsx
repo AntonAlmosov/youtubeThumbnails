@@ -1,6 +1,7 @@
 import React from 'react'
 import data from './data.json'
 import _ from 'lodash'
+import Keyborad from './Keyboard'
 
 export default class Youtube extends React.Component {
   constructor(props) {
@@ -51,6 +52,7 @@ export default class Youtube extends React.Component {
   render() {
     return (
       <div className="appWrapper">
+        <Keyborad handleNum={this.handleKeypad} handleDel={this.handleDelete} />
         <div className="app">
           <div className="display">
             <div className="displayValue">{this.state.display.join('')}</div>
