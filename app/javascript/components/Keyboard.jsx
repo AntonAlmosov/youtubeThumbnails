@@ -17,7 +17,6 @@ function useKeyPress(targetKey, handlePlay) {
   const [keyPressed, setKeyPressed] = useState(false)
   // If pressed key is our target key then set to true
   function downHandler({ key }) {
-    console.log(key)
     if (key == '1') {
       prop.handleNum(1)
     } else if (key == '2') {
@@ -39,6 +38,7 @@ function useKeyPress(targetKey, handlePlay) {
     } else if (key == '0') {
       prop.handleNum(0)
     } else if (key == 'Backspace') prop.handleDel()
+    else if (key == 'Enter') prop.handleView()
   }
 
   // If released key is our target key then set to false

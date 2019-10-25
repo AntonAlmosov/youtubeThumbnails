@@ -12,7 +12,7 @@ export default class Youtube extends React.Component {
       link: ''
     }
 
-    _.bindAll(this, 'handleDelete', 'handleKeypad')
+    _.bindAll(this, 'handleDelete', 'handleKeypad', 'handleView')
   }
 
   handleDelete() {
@@ -35,6 +35,11 @@ export default class Youtube extends React.Component {
     }
   }
 
+  handleView() {
+    var win = window.open(this.state.link, '_blank')
+    win.focus()
+  }
+
   handleKeypad(num) {
     if (this.state.display.length < 3) {
       let arr = this.state.display
@@ -52,7 +57,11 @@ export default class Youtube extends React.Component {
   render() {
     return (
       <div className="appWrapper">
-        <Keyborad handleNum={this.handleKeypad} handleDel={this.handleDelete} />
+        <Keyborad
+          handleNum={this.handleKeypad}
+          handleDel={this.handleDelete}
+          handleView={this.handleView}
+        />
         <div className="app">
           <div className="display">
             <div className="displayValue">{this.state.display.join('')}</div>
