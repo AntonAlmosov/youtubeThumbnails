@@ -1,0 +1,83 @@
+.app {
+  min-height: 300px;
+  min-width: 300px;
+  display: flex;
+  flex-flow: column;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.appWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.display {
+  font-family: sans-serif;
+  height: 75px;
+  width: calc(100%);
+  display: flex;
+}
+
+.displayValue {
+  border: 1px solid black;
+  box-sizing: border-box;
+  height: 100%;
+  width: calc(100% / 3*2);
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+a {
+  &.link {
+    text-decoration: none;
+    width: calc(100% / 3);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-transform: uppercase;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.keypad {
+  display: flex;
+  flex-wrap: wrap;
+  height: calc(100%/4*3);
+  width: 100%;
+
+  .key {
+    font-family: sans-serif;
+    font-size: 16px;
+    height: 75px;
+    width: calc(100%/3);
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    box-sizing: border-box;
+
+    &.zero {
+      width: calc(100%/3*2);
+    }
+  }
+}
